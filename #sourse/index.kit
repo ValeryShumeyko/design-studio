@@ -2,15 +2,210 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
 
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
 
         <title>Design Studio</title>
     </head>
     <body>
-        <!--@import "header.html"-->
-        
+        <div class="wrapper">
+            <main class="page">
+            <!--@import "header.html"-->
+            <div class="main-screen">
+                <!--<div class="main-screen__bg ">--> 
+                    <!--<img src="img/main screen/image1.jpg" alt="main screen"> -->
+                    <div class="image-slider swiper">
+                        <div class="image-slider__wrapper swiper-wrapper">
+                            <div class="image-slider__slide swiper-slide">
+                                <div class="image-slider__image">
+                                    <img src="img/main screen/image1.jpg" alt="main screen">                                    
+                                </div>
+                            </div>
+                            <div class="image-slider__slide swiper-slide">
+                                <div class="image-slider__image image-slider__image2">
+                                    <img src="img/main screen/image2.jpg" alt="main screen">                                    
+                                </div>
+                            </div>
+                            <div class="image-slider__slide swiper-slide">
+                                <div class="image-slider__image image-slider__image3">
+                                    <img src="img/main screen/image3.jpg" alt="main screen">                                
+                                </div>
+                            </div>
+                            <div class="image-slider__slide swiper-slide">
+                                <div class="image-slider__image image-slider__image4">
+                                    <img src="img/main screen/image4.jpg" alt="main screen">                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-span">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <!--<div class="swiper-pagination"></div>-->
+                        <h1 class="main-screen__title">Thoughtful making of space</h1>
+                        <a href="" class="main-screen__discover">Discover more</a>
+                        <div class="main-screen__discover-span"><span></span></div>
+                        <div class="main-screen__contact_social">
+                            <a href="" class="social-links">Fb</a>
+                            <a href="" class="social-links">In</a>
+                            <a href="" class="social-links">Be</a>
+                        </div>
+                        <div class="main-screen__select_container">
+                            <div class="main-screen__select-span"></div>
+                            <select name="city" id="" class="main-screen__select_item">
+                                <option value="1"><img src="img/main screen/icon.svg" alt="icon"> Berlin</option>
+                                <option value="2">Paris</option>
+                                <option value="3">London</option>
+                                <option value="4">Barselona</option>
+                                <option value="5">Kyiv</option>
+                            </select>
+                        </div>
+                        <div class="main-screen__contact_phone-mail">
+                            <a href="" class="social-phone">+380983527547</a>
+                            <a href="" class="social-email">info@gmail.com</a>
+                        </div>
+                        <div class="main-screen__next-project">
+                            <div class="next-project_s">Next Project</div>
+                            <div class="next-project_b">Perfect proportions</div>
+                        </div>
+                    </div>
+                <!--</div>-->
+            </div>
+            <div class="content">
+                <section class="company-philosophy">
+                    <div class="compahy-philosophy__container">
+                        <div class="company-philosophy__1-container">
+                            <div class="text1-block">
+                                <h1>Company Philosophy </h1>
+                                <p>The basic philosophy of our studio is to create individual, aesthetically stunning solutions for our customers by lightning-fast development of projects employing unique styles and architecture. Even if you don't have a ready sketch of what you want - we will help you get the result.</p>
+                                <p>We can also help you create harmony out of seemingly completely incompatible elements in the interior or the exterior design. Do you want to combine classics and abstract art? Modern and retro? Love everything associated with the 1940's? No problem! </p>
+                                <a href="">Discover more</a>
+                            </div>
+                            <div class="image1-block">
+                                <img src="img/company philosophy/image1.jpg" alt="interior">
+                            </div>
+                        </div>
+                        <div class="company-philosophy__2-container">
+                            <div class="image2-block">
+                                <div class="image2-block_parent">
+                                    <img class="image2" src="img/company philosophy/image2.jpg" alt="interior">
+                                    <div class="image2-block_child">
+                                        <img src="img/company philosophy/image3.jpg" alt="interior">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text2-block">
+                                <p>We can also help you create harmony out of seemingly completely incompatible elements in the interior or the exterior design. </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="our-projects">
+                    <div class="our-projects__container">
+                        <div class="our-projects__title">
+                            <h1>Our Projects</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam eu enim sed, ornare pretium velit.</p>
+                        </div>
+                        <div class="our-projects__main">
+                            <div class="our-projects__row1">
+                                <div class="our-projects__row1_column" href="">
+                                    <a href="" class="our-projects__item item">
+                                        <span class="item__hover">
+                                            <ul class="item__hover_header">
+                                                <li>Lodz</li>
+                                                <li>16.10.2018</li>
+                                                <li>80sq.m</li>
+                                            </ul>
+                                            <span class="item__hover_name">Eyewear store interior</span>
+                                            <div class="item__hover_discover">
+                                                <p>Discover more</p>
+                                            </div>
+                                        </span>
+                                        <span class="item__image">
+                                            <img src="img/our projects/image1.jpg" alt="interior">
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="our-projects__row1_column" href="">
+                                    <a href="" class="our-projects__item item">
+                                        <span class="item__hover">
+                                            <ul class="item__hover_header">
+                                                <li>Lodz</li>
+                                                <li>16.10.2018</li>
+                                                <li>80sq.m</li>
+                                            </ul>
+                                            <span class="item__hover_name">Minimalist style home</span>
+                                            <div class="item__hover_discover">
+                                                <p>Discover more</p>
+                                            </div>
+                                        </span>
+                                        <span class="item__image">
+                                            <img src="img/our projects/image2.jpg" alt="interior">
+                                        </sp>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="our-projects__row1">
+                                <div class="our-projects__row1_column our-projects__row1_column_b" href="">
+                                    <a href="" class="our-projects__item item item3">
+                                        <span class="item__hover">
+                                            <ul class="item__hover_header">
+                                                <li>Lodz</li>
+                                                <li>16.10.2018</li>
+                                                <li>80sq.m</li>
+                                            </ul>
+                                            <span class="item__hover_name">Residence by the lighthouse</span>
+                                            <div class="item__hover_discover item__hover_discover_b">
+                                                <p>Discover more</p>
+                                            </div>
+                                        </span>
+                                        <span class="item__image">
+                                            <img src="img/our projects/image3.jpg" alt="interior">
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="our-projects__row1">
+                                <div class="our-projects__row1_column" href="">
+                                    <a href="" class="our-projects__item item">
+                                        <span class="item__hover">
+                                            <ul class="item__hover_header">
+                                                <li>Lodz</li>
+                                                <li>16.10.2018</li>
+                                                <li>80sq.m</li>
+                                            </ul>
+                                            <span class="item__hover_name">Eyewear store interior</span>
+                                            <div class="item__hover_discover">
+                                                <p>Discover more</p>
+                                            </div>
+                                        </span>
+                                        <span class="item__image">
+                                            <img src="img/our projects/image4.jpg" alt="interior">
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="our-projects__row1_column our-projects__row1_column_last" href="">
+                                    <a href="" class="our-projects__item item">
+                                        <span class="item__image item__image_last">
+                                            <span>See more 60 projects</span>
+                                            <img src="img/our projects/image5.jpg" alt="interior">
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!--@import "footer.html"-->
+            </main>
+        </div>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+        <!--@import "js.html"-->
     </body>
     <script src="js/main.js"></script>
 </html>
