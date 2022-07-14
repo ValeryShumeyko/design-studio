@@ -56,13 +56,13 @@
                         </div>
                         <div class="main-screen__select_container">
                             <div class="main-screen__select-span"></div>
-                            <select name="city" id="" class="main-screen__select_item">
-                                <option value="1"><img src="img/main screen/icon.svg" alt="icon"> Berlin</option>
-                                <option value="2">Paris</option>
-                                <option value="3">London</option>
-                                <option value="4">Barselona</option>
-                                <option value="5">Kyiv</option>
-                            </select>
+                            <button class="main-screen__select_button">Berlin</button>
+                            <ul class="main-screen__list">
+                                <li class="main-screen__list-item" data-value="paris">Paris</li>
+                                <li class="main-screen__list-item" data-value="london">London</li>
+                                <li class="main-screen__list-item" data-value="barselona">Kyiv</li>
+                                <li class="main-screen__list-item" data-value="kyiv">Berlin</li>
+                            </ul>
                         </div>
                         <div class="main-screen__contact_phone-mail">
                             <a href="" class="social-phone">+380983527547</a>
@@ -106,7 +106,7 @@
                 </section>
                 <section class="our-projects">
                     <div class="our-projects__container">
-                        <div class="our-projects__title">
+                        <div class="our-projects__title title-styles">
                             <h1>Our Projects</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam eu enim sed, ornare pretium velit.</p>
                         </div>
@@ -189,7 +189,7 @@
                                     </a>
                                 </div>
                                 <div class="our-projects__row1_column our-projects__row1_column_last" href="">
-                                    <a href="" class="our-projects__item item">
+                                    <a href="our-projects.html" class="our-projects__item item">
                                         <span class="item__image item__image_last">
                                             <span>See more 60 projects</span>
                                             <img src="img/our projects/image5.jpg" alt="interior">
@@ -198,10 +198,72 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="our-projects__footer title-styles">
+                            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h1>
+                            <img src="img/our projects/image6.png" alt="">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam eu enim sed, ornare pretium velit.</p>
+                            <a class="button-make-request" href="">Make request</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="random-photos">
+                    <div class="random-photos__container">
+                        <h2>@lorem.ipsum</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. </p>
+                        <img class="random-photos__image random-photos__image_1" src="img/random photos/image1.png" alt="interior">
+                        <img class="random-photos__image random-photos__image_2" src="img/random photos/image2.png" alt="interior">
+                        <img class="random-photos__image random-photos__image_3" src="img/random photos/image3.png" alt="interior">
+                        <img class="random-photos__image random-photos__image_4" src="img/random photos/image4.png" alt="interior">
+                        <img class="random-photos__image random-photos__image_5" src="img/random photos/image5.png" alt="interior">
+                        <img class="random-photos__image random-photos__image_6" src="img/random photos/image6.png" alt="interior">
+                        <img class="random-photos__image random-photos__image_7" src="img/random photos/image7.png" alt="interior">
+                        <img class="random-photos__image random-photos__image_8" src="img/random photos/image8.png" alt="interior">
                     </div>
                 </section>
             </div>
-            <!--@import "footer.html"-->
+            <section class="drop-us">
+                <div class="drop-us__container">
+                    <div class="drop-us__bg-image"><img src="img/drop-us/image1.jpg" alt="background"></div>
+                    <div class="drop-us__content">
+                        <div class="drop-us__title title-styles">
+                            <h1>Drop us a line</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. </p>
+                        </div>
+                        <div class="drop-us__city-address">
+                            <div class="drop-us__city-address_column">
+                                <h2>Kyiv</h2>
+                                <p>(209) 555-0104</p>
+                                <p>6391 Elgin St. Celina,</p>
+                                <p>Delaware 10299</p>
+                            </div>
+                            <div class="drop-us__city-address_column">
+                                <h2>Lviv</h2>
+                                <p>(209) 555-0104</p>
+                                <p>6391 Elgin St. Celina,</p>
+                                <p>Delaware 10299</p>
+                            </div>                            
+                            <div class="drop-us__city-address_column">
+                                <h2>Kharkiv</h2>
+                                <p>(209) 555-0104</p>
+                                <p>6391 Elgin St. Celina,</p>
+                                <p>Delaware 10299</p>
+                            </div>
+                        </div>
+                        <div class="drop-us__mail-social">
+                            <a href="">info@gmail.com</a>
+                            <div class="social-links">
+                                <a href="">Fb</a>
+                                <a href="">In</a>
+                                <a href="">Be</a>
+                            </div>
+                        </div>
+                        <div class="drop-us__button">                            
+                            <a class="button-make-request" href="">Make request</a>
+                        </div>
+                    </div>
+                    <!--@import "footer.html"-->
+                </div>
+            </section>
             </main>
         </div>
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>

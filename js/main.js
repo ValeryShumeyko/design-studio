@@ -18,12 +18,21 @@ if (iconMenu) {
     const menuBody = document.querySelector('.menu__body');
     const menuIconText = document.querySelector('.menu__icon_text');
     const headerButton = document.querySelector('.header__button_item');
+    const headerLogo = document.querySelector('.header__logo_item');
+    const headerLang = document.querySelector('.header__lang_item');
+    const menuLink = document.querySelectorAll('.menu__link');
+
     iconMenu.addEventListener("click", function(e) {
         document.body.classList.toggle('_lock');
         iconMenu.classList.toggle('active');
         menuBody.classList.toggle('active');
         menuIconText.classList.toggle('active');
         headerButton.classList.toggle('active');
+        headerLogo.classList.toggle('active');
+        headerLang.classList.toggle('active');
+        for(var i=0; i<menuLink.length; i++) {
+            menuLink[i].classList.toggle('active');
+        };
     });
 }
 
@@ -43,7 +52,7 @@ new Swiper('.image-slider', {
         }     
     },
     //отступ между слайдами
-    spaceBetween: -19,
+    //spaceBetween: -19,
     //количество пролистываемых слайдов
     slidesPerGroup: 1,
     //бесконечное прокручивание
@@ -57,3 +66,54 @@ new Swiper('.image-slider', {
         type: 'progressbar'
     },
 });
+
+new Swiper('.news-slider',{
+    //количество слайдов для показа
+    slidesPerView: 'auto',
+    //отступ между слайдами
+    spaceBetween: 20,
+    breakpoints: {
+        769: {
+            spaceBetween: 40,
+        },
+        1025: {
+            spaceBetween: 48,
+        }  
+    },
+    //бесконечное прокручивание
+    loop: true,
+        //свободный режим
+    freeMode: true,
+});
+
+//select==============================================================================================
+
+const selectButton = document.querySelector('.main-screen__select_button');
+const selectList = document.querySelector('.main-screen__list');
+const selectListItems = document.querySelectorAll('.main-screen__list-item');
+
+//Клик по кнопке. Открыть, закрыть select
+selectButton.addEventListener('click', function() {
+    selectList.classList.toggle('main-screen__list--visible');
+    this.classList.add('main-screen__select_button--active');
+});
+
+//Выбор элемента списка. Запомнить выбранное значение. Закрыть дропдаун
+selectListItems.forEach(function (listItem) {
+    listItem.addEventListener('click', function (e) {
+        e.stopPropagation();
+        selectButton.innerText = this.innerText;
+        selectButton.focus();
+        selectList.classList.toggle('main-screen__list--visible');
+    })
+})
+
+//Клик снаружи дропдауна. Закрыть дропдаун
+document.addEventListener('click', function (e) {
+    if (e.target !== selectButton) {
+        selectButton.classList.remove('main-screen__select_button--active');
+        selectList.classList.remove('main-screen__list--visible');
+    }
+})
+
+

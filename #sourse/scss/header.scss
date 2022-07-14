@@ -35,6 +35,9 @@
             letter-spacing: 0.3em;
             text-transform: uppercase;
             color: #FFFFFF;  
+            &.active {
+                color: #FFFFFF;  
+            }
         }
     }
 
@@ -55,6 +58,9 @@
             line-height: 13px;
             letter-spacing: 0.06em;
             color: #FFFFFF;
+            &.active {
+                color: #FFFFFF;  
+            }
         }
     }
     @media (max-width: 1024px) {
@@ -87,6 +93,10 @@
             color: #FFFFFF;
             padding: 17px 48px;
             border: 1px solid rgba(253, 253, 253, 0.32);
+            &.active {
+                color: #FFFFFF;
+                border: 1px solid rgba(253, 253, 253, 0.32);
+            }
         }
     }
     @media (max-width: 1024px) {
@@ -143,6 +153,9 @@
         line-height: 13px;
         letter-spacing: 0.06em;
         color: #fff;
+        &.active {
+            color: #FFFFFF;  
+        }
 
         &_home {
             display: none;
@@ -251,6 +264,7 @@
         &.active {
             top: -8px;
             span {
+                background-color: #fff;
                 transform: rotate(45deg) translate(0px, 50%);
                 &:first-child {
                     transform: rotate(-45deg) translate(0px, -50%);
