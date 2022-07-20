@@ -1,4 +1,202 @@
 
+
+const popupLinks = document.querySelectorAll('.popup-link');
+const body = document.querySelector('body');
+const lockPadding = document.querySelectorAll(".lock-padding");
+
+let unlock = true;
+
+const timeout = 800;
+
+if (popupLinks.length > 0) {
+    for (let index = 0; index < popupLinks.length; index++) {
+        const popupLink = popupLinks[index];
+        popupLink.addEventListener("click", function (e) {
+            const popupName = popupLink.getAttribute('href').replace('#', '');
+            const curentPopup = document.getElementById(popupName);
+            popupOpen(curentPopup);
+            e.preventDefault();
+        });
+    }
+}
+
+const popupCloseIcon = document.querySelectorAll('.close-popup');
+if (popupCloseIcon.length > 0) {
+    for (let index = 0; index < popupCloseIcon.length; index++) {
+        const el = popupCloseIcon[index];
+        el.addEventListener('click', function (e) {
+            popupClose(el.closest('.popup'));
+            e.preventDefault();
+        });
+    }
+}
+
+function popupOpen(curentPopup) {
+    if (curentPopup && unlock) {
+        const popupActive = document.querySelector('.popup.open');
+        if (popupActive) {
+            popupClose(popupActive, false);
+        } else {
+            bodyLock();
+        }
+        curentPopup.classList.add('open');
+        curentPopup.addEventListener("click", function (e) {
+            if (!e.target.closest('.popup__content')) {
+                popupClose(e.target.closest('.popup'));
+            }
+        });
+    }
+}
+
+function popupClose(popupActive, doUnlock = true) {
+    if (unlock) {
+        popupActive.classList.remove('open');
+        if (doUnlock) {
+            bodyUnlock();
+        }
+    }
+}
+
+function bodyLock() {
+    const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+
+    if (lockPadding.length > 0) {
+        for (let index = 0; index < lockPadding.length; index++) {
+            const el = lockPadding[index];
+            el.style.paddingRight = lockPaddingValue;
+        }
+    }
+    body.style.paddingRight = lockPaddingValue;
+    body.classList.add('lock');
+
+    unlock = false;
+    setTimeout(function () {
+        unlock = true;
+    }, timeout);
+}
+
+function bodyUnlock() {
+    setTimeout(function () {
+        for (let index = 0; index < lockPadding.length; index++) {
+            const el = lockPadding[index];
+            el.style.paddingRight = '0px';
+        }
+        body.style.paddingRight = '0px';
+        body.classList.remove('lock');
+    }, timeout);
+
+    unlock = false;
+    setTimeout(function () {
+        unlock = true;
+    }, timeout);
+}
+"use strict"
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('form');
+    form.addEventListener('submit', formSend);
+
+    async function formSend(e) {
+        e.preventDefault();
+
+        let error = formValidate(form);
+
+        //let formData = new FormData(form);
+        //formData.append('file', formFile.files[0]);
+
+        if (error===0) {
+            let formButton = document.getElementById('form__button');
+            formButton.setAttribute('href', '#popup_2');
+            formButton.click();
+            form.reset();
+            textReq.classList.remove('active');
+
+        } else {
+            //alert('hey');
+            let textReq = document.querySelector('.form__req');
+            textReq.classList.add('active');
+        }
+    }
+
+    function formValidate(form) {
+        let error = 0;
+        let formReq = document.querySelectorAll('._req');
+
+        for (let index = 0; index < formReq.length; index++) {
+            const input = formReq[index];
+            formRemoveError(input);
+
+            if (input.classList.contains('_email')) {
+                if (emailTest(input)) {
+                    formAddError(input);
+                    error++;
+                }
+            } else {
+                if (input.value === '') {
+                    formAddError(input);
+                    error++;
+                }
+            }
+        }
+        return error;
+    }
+
+    function formAddError(input) {
+        input.parentElement.classList.add('_error');
+        input.classList.add('_error');
+    }
+    function formRemoveError(input) {
+        input.parentElement.classList.remove('_error');
+        input.classList.remove('_error');
+    }
+    //Функция теста email
+    function emailTest(input) {
+        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+    }
+
+    //Получаем инпут file в переменную
+    const formFile = document.getElementById('formFile');
+
+    formFile.addEventListener('change', () => {
+        uploadFile(formFile.files[0]);
+    });
+
+    function uploadFile(file) {
+        //проверим размер файла (< 10mb)
+        if (file.size > 10 * 1024 * 1024) {
+            alert('File size not more than 10 MB');
+            return;
+        }
+    }
+
+});
+const formSelectButton = document.querySelector('.select__button');
+const formSelectList = document.querySelector('.select__list');
+const formSelectListItems = document.querySelectorAll('.select__list-item');
+
+//Клик по кнопке. Открыть, закрыть select
+formSelectButton.addEventListener('click', function() {
+    formSelectList.classList.toggle('select__list--visible');
+    this.classList.add('select__button--active');
+});
+
+//Выбор элемента списка. Запомнить выбранное значение. Закрыть дропдаун
+formSelectListItems.forEach(function (listItem) {
+    listItem.addEventListener('click', function (e) {
+        e.stopPropagation();
+        formSelectButton.innerText = this.innerText;
+        formSelectButton.focus();
+        formSelectList.classList.toggle('select__list--visible');
+    })
+})
+
+//Клик снаружи дропдауна. Закрыть дропдаун
+document.addEventListener('click', function (e) {
+    if (e.target !== formSelectButton) {
+        formSelectButton.classList.remove('select__button--active');
+        formSelectList.classList.remove('select__list--visible');
+    }
+})
 // ibg
 
 function ibg() {
@@ -10,6 +208,7 @@ function ibg() {
     };
 }
 ibg();
+
 
 //бургер==========================================================
 
@@ -35,6 +234,46 @@ if (iconMenu) {
         };
     });
 }
+
+
+
+
+//--------------------filter-----------------------------------------------------
+
+function app() {
+    const buttons = document.querySelectorAll('.button');
+    const cards = document.querySelectorAll('.card');
+
+    function filter (category, items) {
+        items.forEach((item) => {
+            const isItemFiltered = !item.classList.contains(category);
+            const isShowAll = category.toLowerCase() === 'all';
+            if (isItemFiltered && !isShowAll) {
+                item.classList.add('hide');
+            } else {
+                item.classList.remove('hide');
+            }
+        })
+    }
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const currentCategory = button.dataset.filter;
+            filter(currentCategory, cards);
+            for (var i=0; i<buttons.length; i++) {
+                if (buttons[i].classList.contains('active')) {
+                    buttons[i].classList.remove('active');
+                } else {
+                }
+            }
+            button.classList.add('active');
+        })
+    })
+}
+
+app();
+
+
 
 //cлайдер========================================================================================
 
@@ -86,6 +325,22 @@ new Swiper('.news-slider',{
     freeMode: true,
 });
 
+new Swiper('.slider',{
+    //Стрелки
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+    },
+    //количество слайдов для показа
+    slidesPerView: 'auto',
+    //отступ между слайдами
+    spaceBetween: 20,
+    //бесконечное прокручивание
+    loop: true,
+        //свободный режим
+    freeMode: true,
+});
+
 //select==============================================================================================
 
 const selectButton = document.querySelector('.main-screen__select_button');
@@ -115,5 +370,7 @@ document.addEventListener('click', function (e) {
         selectList.classList.remove('main-screen__list--visible');
     }
 })
+
+
 
 
