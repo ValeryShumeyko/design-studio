@@ -1,0 +1,101 @@
+.preloader {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    transition: all 1s ease 0s;
+    animation: preloader 4.5s linear forwards;
+    &__loader {
+        display: flex;
+        justify-content: center;
+        padding: 350px 0px 0px 0px;
+        overflow: hidden;
+    }
+    &--hide {
+        opacity: 0;
+        visibility: hidden;
+        z-index: -2;
+    }
+    &__percents {
+        display: flex;
+        position: relative;
+        width: 200px;
+        height: 35px;
+        overflow: hidden;
+        h1 {
+            padding: 0px 15px 0px 0px;
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 29px;
+            letter-spacing: 0.26em;
+            color: #F5F5F5;
+        }
+        p {
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 29px;
+            letter-spacing: 0.26em;
+            color: #FAFAFA;
+        }
+        span {
+            display: flex;
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 0.26em;
+            color: #FAFAFA;
+        }
+        &_body {
+            animation: counter 3s steps(7, end) forwards;
+        }
+        & .light {
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 29px;
+            letter-spacing: 0.26em;
+            color: #FAFAFA;
+            text-transform: uppercase;
+            position: absolute;
+            top: 0;
+            left: 55px;
+            background-color: #000;
+            height: 35px;
+            opacity: 0;
+            animation: light 3.5s steps(1, end) forwards;
+
+            & .active {
+                display: block;
+            }
+        }
+    }
+}
+@keyframes counter {
+    0% {
+    }
+    100% {
+        transform: translate(0px, -225px);
+    }
+}
+@keyframes light {
+    0% {
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes preloader {
+    0% {
+    }
+    90% {
+        opacity: 1;
+        visibility: visible;
+        z-index: 100;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        z-index: -2;    
+    }
+}

@@ -10,6 +10,7 @@ function ibg() {
 }
 ibg();
 
+
 //бургер==========================================================
 
 const iconMenu = document.querySelector('.icon-menu');
@@ -34,6 +35,46 @@ if (iconMenu) {
         };
     });
 }
+
+
+
+
+//--------------------filter-----------------------------------------------------
+
+function app() {
+    const buttons = document.querySelectorAll('.button');
+    const cards = document.querySelectorAll('.card');
+
+    function filter (category, items) {
+        items.forEach((item) => {
+            const isItemFiltered = !item.classList.contains(category);
+            const isShowAll = category.toLowerCase() === 'all';
+            if (isItemFiltered && !isShowAll) {
+                item.classList.add('hide');
+            } else {
+                item.classList.remove('hide');
+            }
+        })
+    }
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const currentCategory = button.dataset.filter;
+            filter(currentCategory, cards);
+            for (var i=0; i<buttons.length; i++) {
+                if (buttons[i].classList.contains('active')) {
+                    buttons[i].classList.remove('active');
+                } else {
+                }
+            }
+            button.classList.add('active');
+        })
+    })
+}
+
+app();
+
+
 
 //cлайдер========================================================================================
 
@@ -85,6 +126,22 @@ new Swiper('.news-slider',{
     freeMode: true,
 });
 
+new Swiper('.slider',{
+    //Стрелки
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+    },
+    //количество слайдов для показа
+    slidesPerView: 'auto',
+    //отступ между слайдами
+    spaceBetween: 20,
+    //бесконечное прокручивание
+    loop: true,
+        //свободный режим
+    freeMode: true,
+});
+
 //select==============================================================================================
 
 const selectButton = document.querySelector('.main-screen__select_button');
@@ -114,5 +171,7 @@ document.addEventListener('click', function (e) {
         selectList.classList.remove('main-screen__list--visible');
     }
 })
+
+
 
 

@@ -25,10 +25,10 @@
                             <div class="title__menu_container">
                                 <button class="title__menu_button">House</button>
                                 <nav class="title__menu">
-                                    <p class="title__menu_item active">House</p>
-                                    <p class="title__menu_item">Apartments</p>
-                                    <p class="title__menu_item">Commerce</p>
-                                    <p class="title__menu_item">Architecture</p>
+                                    <p class="title__menu_item button active" data-filter="all">House</p>
+                                    <p class="title__menu_item button" data-filter="apartments">Apartments</p>
+                                    <p class="title__menu_item button" data-filter="commerce">Commerce</p>
+                                    <p class="title__menu_item button" data-filter="architecture">Architecture</p>
                                 </nav>
                             </div>
                         </div>
@@ -38,9 +38,9 @@
                 <section class="our-projects">
                     <div class="our-projects__container">
                         <div class="our-projects__main">
-                            <div class="our-projects__row1 our-projects__row1_1">
-                                <div class="our-projects__row1_column" href="">
-                                    <a href="" class="our-projects__item item">
+                            <div class="our-projects__body">
+                                <div class="our-projects__row1_column card apartments architecture">
+                                    <a href="one-project.html" class="our-projects__item item">
                                         <span class="item__hover">
                                             <ul class="item__hover_header">
                                                 <li>Lodz</li>
@@ -57,8 +57,8 @@
                                         </span>
                                     </a>
                                 </div>
-                                <div class="our-projects__row1_column" href="">
-                                    <a href="" class="our-projects__item item">
+                                <div class="our-projects__row1_column card architecture">
+                                    <a href="one-project.html" class="our-projects__item item">
                                         <span class="item__hover">
                                             <ul class="item__hover_header">
                                                 <li>Lodz</li>
@@ -75,10 +75,8 @@
                                         </sp>
                                     </a>
                                 </div>
-                            </div>
-                            <div class="our-projects__row1 our-projects__row1_2">
-                                <div class="our-projects__row1_column our-projects__row1_column_b" href="">
-                                    <a href="" class="our-projects__item item item3">
+                                <div class="our-projects__row1_column card commerce our-projects__row1_column_b">
+                                    <a href="one-project.html" class="our-projects__item item item3">
                                         <span class="item__hover">
                                             <ul class="item__hover_header">
                                                 <li>Lodz</li>
@@ -95,10 +93,8 @@
                                         </span>
                                     </a>
                                 </div>
-                            </div>
-                            <div class="our-projects__row1 our-projects__row1_3">
-                                <div class="our-projects__row1_column" href="">
-                                    <a href="" class="our-projects__item item">
+                                <div class="our-projects__row1_column card commerce apartments">
+                                    <a href="one-project.html" class="our-projects__item item">
                                         <span class="item__hover">
                                             <ul class="item__hover_header">
                                                 <li>Lodz</li>
@@ -115,8 +111,8 @@
                                         </span>
                                     </a>
                                 </div>
-                                <div class="our-projects__row1_column" href="">
-                                    <a href="" class="our-projects__item item">
+                                <div class="our-projects__row1_column card commerce">
+                                    <a href="one-project.html" class="our-projects__item item">
                                         <span class="item__hover">
                                             <ul class="item__hover_header">
                                                 <li>Lodz</li>
@@ -133,10 +129,8 @@
                                         </span>
                                     </a>
                                 </div>
-                            </div>
-                            <div class="our-projects__row1 our-projects__row1_4">
-                                <div class="our-projects__row1_column our-projects__row1_column_b" href="">
-                                    <a href="" class="our-projects__item item item3">
+                                <div class="our-projects__row1_column card apartments our-projects__row1_column_b" href="">
+                                    <a href="one-project.html" class="our-projects__item item item3">
                                         <span class="item__hover">
                                             <ul class="item__hover_header">
                                                 <li>Lodz</li>
@@ -157,9 +151,19 @@
                         </div>
                         <div class="our-projects__footer title-styles">
                             <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h1>
-                            <img src="img/our projects/image6.png" alt="">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam eu enim sed, ornare pretium velit.</p>
-                            <a class="button-make-request" href="">Make request</a>
+                            <div class="image">
+                                <img src="img/our projects/01.png" alt="">
+                                <img src="img/our projects/02.png" alt="">
+                                <img src="img/our projects/03.png" alt="">
+                                <img src="img/our projects/04.png" alt="">
+                                <img src="img/our projects/05.png" alt="">
+                                <img src="img/our projects/01.png" alt="">
+                                <img src="img/our projects/02.png" alt="">
+                                <img src="img/our projects/03.png" alt="">
+                                <img src="img/our projects/04.png" alt="">
+                                <img src="img/our projects/05.png" alt="">
+                            </div>                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam eu enim sed, ornare pretium velit.</p>
+                            <a class="button-make-request popup-link" href="#popup">Make request</a>
                         </div>
                     </div>
                 </section>
@@ -168,7 +172,8 @@
             <!--@import "footer_black.html"-->
             </main>
         </div>
-
+        
+        <!--@import "popups.html"-->
 
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
         <!--@import "js.html"-->

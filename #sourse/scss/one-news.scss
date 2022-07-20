@@ -9,6 +9,8 @@ body {
     background: #fff;
 }
 .header {
+    position: fixed;
+    background-color: #fff;
     &__logo_item, &__lang_item, &__button_item {
         color: #000;
     }

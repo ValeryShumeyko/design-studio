@@ -1,5 +1,6 @@
 @import "style.scss";
 
+
 //-----------------header---------------------------------------------------------------------------------
 a:hover {
     color: #141414;
@@ -10,6 +11,8 @@ body {
     background: #fff;
 }
 .header {
+    position: fixed;
+    background-color: #fff;
     &__logo_item, &__lang_item, &__button_item {
         color: #000;
     }
@@ -165,12 +168,12 @@ body {
             top: 35px;
             left: 0;
             width: 228px;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 1);
             box-shadow: 0px 4px 8px rgba(176, 198, 225, 0.6);
             border-radius: 20px;
             padding: 9px 0px 9px 0px;
             &_item {
-                margin: 0;
+                margin: 5px 0px;
                 padding: 3px 0px 3px 16px;
                 &.active {
                     color: #828282;
@@ -178,6 +181,7 @@ body {
                 }
                 &:first-child {
                     border-radius: 20px 20px 0px 0px;
+                    margin: 5px 0px;
                 }
                 &:last-child {
                     border-radius: 0px 0px 20px 20px;
@@ -200,10 +204,15 @@ body {
     &__main {
         padding-bottom: 96px;
     }
-    &__row1 {
+    &__body {
+        display: flex;
+        flex-wrap: wrap;
         align-items: flex-end;
         background-color: #F2F2F2;
+    }
+    &__row1 {
         &_column {
+            flex: 1 1 50%;
             &:last-child {
                 padding: 0px 0px 0.7% 0px;
             }
@@ -272,6 +281,9 @@ body {
         }
     }
 }
+.hide {
+    display: none;
+}
 .item {
     position: relative;
     &__name {
@@ -320,9 +332,29 @@ body {
 }
 @media (max-width: 768px) {
     .our-projects {
+        &__body {
+            flex-direction: column;
+        }
         &__row1 {
-            &:first-child {
-                flex-direction: column-reverse;
+            &_column {
+                &:nth-child(1) {
+                    order: 2;
+                }
+                &:nth-child(2) {
+                    order: 1;
+                }
+                &:nth-child(3) {
+                    order: 3;
+                }
+                &:nth-child(4) {
+                    order: 4;
+                }
+                &:nth-child(5) {
+                    order: 5;
+                }
+                &:nth-child(6) {
+                    order: 6;
+                }
             }
         }
     }
