@@ -25,15 +25,15 @@
                 <ul class="menu__list">
                     <li><a href="index.html" class="menu__link menu__link_home">Home</a></li>
                     <li><a href="our-projects.html" class="menu__link">Projects</a></li>
-                    <li><a href="" class="menu__link">About us</a></li>
+                    <li><a href="about-us.html" class="menu__link">About us</a></li>
                     <li><a href="news.html" class="menu__link">Blog</a></li>
-                    <li><a href="" class="menu__link">Contacts</a></li>
+                    <li><a href="contact.html" class="menu__link">Contacts</a></li>
                 </ul>
             </div>
             
         </nav>
         <div class="header__lang"><a href="" class="header__lang_item">En</a></div>
-        <div class="header__button"><a href="" class="header__button_item">Send Request</a></div>
+        <div class="header__button"><a href="#popup" class="header__button_item popup-link">Send Request</a></div>
     </div>
 </header>            <section class="title">
                 <div class="title__container">
@@ -43,10 +43,10 @@
                     <div class="title__menu_container">
                         <button class="title__menu_button">All</button>
                         <nav class="title__menu">
-                            <p class="title__menu_item active">All</p>
-                            <p class="title__menu_item">Blog</p>
-                            <p class="title__menu_item">News</p>
-                            <p class="title__menu_item">Advice from the designer</p>
+                            <p class="title__menu_item button active" data-filter="all">All</p>
+                            <p class="title__menu_item button" data-filter="blog">Blog</p>
+                            <p class="title__menu_item button" data-filter="news">News</p>
+                            <p class="title__menu_item button" data-filter="advice">Advice from the designer</p>
                         </nav>
                     </div>
                 </div>
@@ -54,9 +54,9 @@
 
             <section class="our-projects">
                 <div class="our-projects__main">
-                    <div class="our-projects__row1">
-                        <div class="our-projects__row1_column">
-                            <a href="one-news.html" class="our-projects__item item">
+                    <div class="our-projects__body">
+                        <div class="our-projects__row1_column card advice">
+                            <a href="one-news.html" class="our-projects__item advice item">
                                 <div class="our-projects__item_text">
                                     <h2>5 smart tips for productive collaboration with the designer</h2>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel gravida urna. Donec blandit sapien eu diam ullamcorper euismod. Nam tempus pellentesque ligula ut aliquam.</p>
@@ -67,43 +67,41 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="our-projects__row1_column">
+                        <div class="our-projects__row1_column card news">
                             <a href="one-news.html" class="our-projects__item item">
                                 <span class="item__image">
                                     <img src="img/news-main/image1.jpg" alt="interior">
                                 </span>
                             </a>
                         </div>
-                    </div>
-                    <div class="our-projects__row1">
-                        <div class="our-projects__row1_column">
+                        <div class="our-projects__row1_column card blog">
                             <a href="one-news.html" class="our-projects__item item">
                                 <div class="item__name">
-                                    Non-standard plinth options                                </div>
+                                    Non-standard plinth options                                
+                                </div>
                                 <span class="item__image">
                                     <img src="img/news-main/image2.jpg" alt="interior">
                                 </span>
                             </a>
                         </div>
-                        <div class="our-projects__row1_column">
+                        <div class="our-projects__row1_column card blog">
                             <a href="one-news.html" class="our-projects__item item">
                                 <div class="item__name">
-                                    Interior design, LCD Rybalsky                                </div>
+                                    Interior design, LCD Rybalsky                                
+                                </div>
                                 <span class="item__image">
                                     <img src="img/news-main/image3.jpg" alt="interior">
                                 </span>
                             </a>
                         </div>
-                    </div>
-                    <div class="our-projects__row1">
-                        <div class="our-projects__row1_column">
+                        <div class="our-projects__row1_column card news">
                             <a href="one-news.html" class="our-projects__item item">
                                 <span class="item__image">
                                     <img src="img/news-main/image1.jpg" alt="interior">
                                 </span>
                             </a>
                         </div>
-                        <div class="our-projects__row1_column">
+                        <div class="our-projects__row1_column card advice">
                             <a href="one-news.html" class="our-projects__item item">
                                 <div class="our-projects__item_text">
                                     <h2>5 smart tips for productive collaboration with the designer</h2>
@@ -150,7 +148,133 @@
             </section>
             </main>
         </div>
+        
+<div id="popup" class="popup">
+    <div class="popup__body">
+        <div class="popup__content">
+            <a href="#" class="popup__close close-popup">+</a>
+            <div class="form">
+                <form action="#" id="form" class="form__body">
+                    <div class="form__container form__container_top">
+                        <h1 class="form__title">Calculate the cost of work</h1>
+                        <div class="form__req">Fill in required fields</div>
+                        <div class="form__container_input">
+                            <div class="form__item form__item_input">
+                                <input type="text" id="formName" name="name" placeholder="Name" class="form__input _req">
+                            </div>
+                            <div class="form__item form__item_input">
+                                <input type="text" id="formLastName" name="last-name" placeholder="Last name" class="form__input _req">
+                            </div>                        
+                            <div class="form__item form__item_input">
+                                <input type="text" id="formPhone" name="phone" placeholder="Phone" class="form__input _req">
+                            </div>                        
+                            <div class="form__item form__item_input">
+                                <input type="text" id="formCity" name="city" placeholder="Your city" class="form__input">
+                            </div>                        
+                            <div class="form__item form__item_input">
+                                <input type="text" id="formEmail" name="email" placeholder="Email" class="form__input _req _email">
+                            </div>
+                        <!--<div class="form__item">
+                            <input type="text" id="formPropertyType" name="property-type" class="form__input">
+                        </div>-->
+                            <div class="form__item form__item_input">
+                                <!--<select name="property" class="select">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>-->
+                                <div class="select__container">
+                                    <div class="select__button">Property type</div>
+                                    <ul class="select__list">
+                                        <li class="select__list-item">Apartments</li>
+                                        <li class="select__list-item">House</li>
+                                        <li class="select__list-item">Office space</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form__item form__item_input">
+                                <textarea id="formComment" name="comment" placeholder="Your comment" class="form__input"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__container form__container_bottom">
+                        <h1 class="form__label">Area [m2]</h1>
+                        <div class="options">
+                            <div class="options__item">
+                                <input id="formTo50Area" type="radio" value="to50" name="area" class="options__input">
+                                <label for="formTo50Area" class="options__label"><span>to 50</span></label>
+                            </div>
+                            <div class="options__item">
+                                <input id="form50-150Area" checked type="radio" value="50-150" name="area" class="options__input">
+                                <label for="form50-150Area" class="options__label"><span>50-150</span></label>
+                            </div>
+                            <div class="options__item">
+                                <input id="form150-250Area" type="radio" value="150-250" name="area" class="options__input">
+                                <label for="form150-250Area" class="options__label"><span>150-250</span></label>
+                            </div>
+                            <div class="options__item">
+                                <input id="form250-400Area" type="radio" value="250-400" name="area" class="options__input">
+                                <label for="form250-400Area" class="options__label"><span>250-400</span></label>
+                            </div>
+                            <div class="options__item">
+                                <input id="form400-600Area" type="radio" value="400-600" name="area" class="options__input">
+                                <label for="form400-600Area" class="options__label"><span>400-600</span></label>
+                            </div>
+                            <div class="options__item">
+                                <input id="form600-800Area" type="radio" value="600-800" name="area" class="options__input">
+                                <label for="form600-800Area" class="options__label"><span>600-800</span></label>
+                            </div>
+                            <div class="options__item">
+                                <input id="form800-1000Area" type="radio" value="800-1000" name="area" class="options__input">
+                                <label for="form800-1000Area" class="options__label"><span>800-1000</span></label>
+                            </div>
+                            <div class="options__item">
+                                <input id="form1000+Area" type="radio" value="1000+" name="area" class="options__input">
+                                <label for="form1000+Area" class="options__label"><span>1000+</span></label>
+                            </div>
+                        </div>
+                        <div class="form__item form__item_file">
+                            <div class="file">
+                                <div class="file__item">
+                                    <input id="formFile" type="file" name="file" class="file__input">
+                                    <div class="file__button">+</div>
+                                </div>
+                            </div>
+                            <div class="file__title">
+                                <div class="form__label form__label_file">Attach your file</div>
+                                <p>File size not more than 10 MB</p>
+                            </div>
+                            <button type="submit" id="form__button" class="form__button popup-link">Send Request<!--<a href="#popup_2" class="form__button popup-link">Send Request</a>--></button>
+                        </div>
+                        <div class="form__item form__bottom-text">
+                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="popup_2" class="popup">
+    <div class="popup__body popup__body_2">
+        <div class="popup__content popup__content_2">
+            <a href="" class="popup__close close-popup">+</a>
+            
+            <div class="popup__title">
+                Thank you for your message!
+            </div>
+            <div class="popup__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam eu enim sed, ornare pretium velit.
+            </div>
+            <button type="submit"  href="#popup" class="form__button form__button_2 popup-link">Send again<!--<a href="#popup_2" class="form__button popup-link">Send Request</a>--></button>
+        </div>
+    </div>
+</div>
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-<script src="js/main.js"></script>        <script src="js/news.js"></script>
+<script src="js/main.js"></script>
+        <script src="js/news.js"></script>
     </body>
 </html>
