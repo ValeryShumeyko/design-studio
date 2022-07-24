@@ -51,9 +51,13 @@ function popupOpen(curentPopup) {
 function popupClose(popupActive, doUnlock = true) {
     if (unlock) {
         popupActive.classList.remove('open');
-
-
-
+        
+        if (doUnlock) {
+            bodyUnlock();
+            
+            
+            
+            
         form.reset();
         uploadedArea.remove();
 
@@ -71,13 +75,6 @@ function popupClose(popupActive, doUnlock = true) {
             input.classList.remove('_error');
         }
         formRemoveError(input);
-
-
-
-
-        
-        if (doUnlock) {
-            bodyUnlock();
         }
     }
 }
