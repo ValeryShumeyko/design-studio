@@ -187,13 +187,14 @@ body {
             border-radius: 20px;
             padding: 9px 0px 9px 0px;
             &_item {
-                margin: 0;
+                margin: 5px 0px;
                 padding: 3px 0px 3px 16px;
                 &.active {
                     color: #828282;
                     border-bottom: none;
                 }
                 &:first-child {
+                    margin: 5px 0px;
                     border-radius: 20px 20px 0px 0px;
                 }
                 &:last-child {

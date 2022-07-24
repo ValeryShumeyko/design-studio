@@ -49,6 +49,31 @@ function popupOpen(curentPopup) {
 function popupClose(popupActive, doUnlock = true) {
     if (unlock) {
         popupActive.classList.remove('open');
+
+
+
+        form.reset();
+        uploadedArea.remove();
+
+
+        let textReq = document.querySelector('.form__req');
+        textReq.classList.remove('active');
+        let formReq = document.querySelectorAll('._req');
+    
+        for (let index = 0; index < formReq.length; index++) {
+            const input = formReq[index];
+            formRemoveError(input);
+        }
+        function formRemoveError(input) {
+            input.parentElement.classList.remove('_error');
+            input.classList.remove('_error');
+        }
+        formRemoveError(input);
+
+
+
+
+        
         if (doUnlock) {
             bodyUnlock();
         }

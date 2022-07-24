@@ -998,45 +998,76 @@ a:hover {
                     left: 0;
                     z-index: 1;
                     transition: all 0.5s ease 0s;
+                    &:nth-child(1) {
+                        &:hover {
+                            transform: rotate(5.99deg) scale(1.2);
+                        }
+                    }
                     &:nth-child(2) {
                         left: 65px;
                         top: -20px;
+                        &:hover {
+                            transform: rotate(0.33deg) scale(1.2);
+                        }
                     }
                     &:nth-child(3) {
                         left: 105px;
                         top: -25px;
+                        &:hover {
+                            transform: rotate(5.81deg) scale(1.2);
+                        }
                     }
                     &:nth-child(4) {
                         left: 170px;
                         top: -53px;
+                        &:hover {
+                            transform: rotate(1.72deg) scale(1.2);
+                        }
                     }
                     &:nth-child(5) {
                         left: 216px;
                         top: -71px;
+                        &:hover {
+                            transform: rotate(10.5deg) scale(1.2);
+                        }
                     }
                     &:nth-child(6) {
                         left: 264px;
                         top: -91px;
+                        &:hover {
+                            transform: rotate(5.99deg) scale(1.2);
+                        }
                     }
                     &:nth-child(7) {
                         left: 329px;
                         top: -111px;
+                        &:hover {
+                            transform: rotate(0.33deg) scale(1.2);
+                        }
                     }
                     &:nth-child(8) {
                         left: 369px;
                         top: -116px;
+                        &:hover {
+                            transform: rotate(5.81deg) scale(1.2);
+                        }
                     }
                     &:nth-child(9) {
                         left: 434px;
                         top: -136px;
+                        &:hover {
+                            transform: rotate(1.72deg) scale(1.2);
+                        }
                     }
                     &:nth-child(10) {
                         left: 480px;
                         top: -156px;
+                        &:hover {
+                            transform: rotate(10.5deg) scale(1.2);
+                        }
                     }
                     &:hover {
                         z-index: 2;
-                        transform: scale(1.05);
                     }
                 }
             }

@@ -188,6 +188,9 @@
         background: #3A3E4B;
         position: relative;
         top: 0;
+        &-bottom {
+            display: none;
+        }
         &:hover {
             color: #333743;
             background: #bdbfc7;
@@ -219,7 +222,7 @@
         }
         &__item {
             &_file {
-                margin: 0px;
+                margin: 0px 0px 15px 0px;
             }
         }
         &__button {
@@ -244,6 +247,10 @@
             }
         }
         &__button {
+            display: none;
+            &-bottom {
+                display: block;
+            }
             margin: 0 auto;
         }
     }
@@ -357,12 +364,83 @@ textarea.form__input {
         }
     }
 }
-
 @media (max-width: 810px) {
     .file {
-        display: none;
+      //  display: none;
         &__title {
-            display: none;
+           // display: none;
         }
     }
 }
+section {
+    & .row {
+        background: #F2F2F2;
+        margin: 0px 0px 10px 0px;
+        list-style: none;
+        padding: 15px 20px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    & .details {
+        span {
+            font-size: 14px;
+        }
+    }
+}
+.progress-area {
+    & .row {
+        & .content {
+            width: 100%;
+            margin: 0px 0px 0px 15px;
+        }
+    }
+    & .details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0px 0px 7px 0px;
+    }
+    & .progress-bar {
+        height: 6px;
+        width: 100%;
+        background-color: #fff;
+        margin: 0px 0px 4px 0px;
+        border-radius: 30px;
+        & .progress {
+            height: 100%;
+            width: 0%;
+            background: #404040;
+            border-radius: inherit;
+            animation: progress 2s ease forwards;
+        }
+    }
+}
+@keyframes progress {
+    0% {
+    }
+    100% {
+        width: 100%;
+    }
+}
+.uploaded-area {
+    & .row {
+        & .content {
+            display: flex;
+            align-items: center;
+        }
+        & .details {
+            display: flex;
+            margin: 0px 0px 0px 15px;
+            flex-direction: column;
+            & .size {
+                font-size: 11px;
+                color: #404040;
+                margin: 5px 0px 0px 0px;
+            }
+        }
+    }
+}
+
+
